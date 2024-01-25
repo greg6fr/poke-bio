@@ -23,8 +23,7 @@ class CartController extends AbstractController
      * @Route("/mon-panier", name="cart")
      */
     public function index(Cart $cart, Request $request)
-    {   //$verif=$request->query->get('promo');
- //  dd(isset($verif));
+    {   
     $taux=0;
         if(isset($this->promo) && $this->promo==="oui") {
             

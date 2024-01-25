@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %} {% block title %}Welcome to Poke-Bio{% endblock
+%} {% block content %}
+<div class="block-small">
+  <form method="post">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Bingooo</h1>
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      Vous gagné le code promo
+    </h2>
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      <strong>{{ code }}</strong>
+    </h2>
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      vous donnant droit à :
+    </h2>
+    {% if taux == 10 %}
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      <strong> {{ taux }} % sur toute commande à partir de 30 euros. </strong>
+    </h2>
+    {% endif %} {% if taux == 5 %}
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      <strong> {{ taux }} % de reduction sur le deuxième menu acheté. </strong>
+    </h2>
+    {% endif %} {% if taux == 3 %}
+    <h2 class="h3 mb-3 font-weight-normal text-center">
+      <strong>Un menu de 35 euros gratuit.</strong>
+    </h2>
+    {% endif %}
+
+    <button class="btn btn-lg btn-info btn-block mt-3" type="submit">
+      Bénéficiez de votre gain
+    </button>
+    <hr />
+  </form>
+</div>
+
+{% endblock %}
