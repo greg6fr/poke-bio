@@ -24,23 +24,24 @@ class DashboardController extends AbstractDashboardController
     {
         $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
 
-        return $this->redirect($routeBuilder->setController(OrderCrudController::class)->generateUrl());
+      //  return $this->redirect($routeBuilder->setController(OrderCrudController::class)->generateUrl());
+    return $this->render('admin/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('La Boutique Française');
+            ->setTitle('Poke Bowl');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
-        yield MenuItem::linkToCrud('Orders', 'fa fa-shopping-cart', Order::class);
-        yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
-        yield MenuItem::linkToCrud('Products', 'fa fa-tag', Product::class);
-        yield MenuItem::linkToCrud('Carriers', 'fa fa-truck', Carrier::class);
+      yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+      yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user', User::class);
+       yield MenuItem::linkToCrud('Commandes', 'fa fa-shopping-cart', Order::class);
+       yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
+        yield MenuItem::linkToCrud('Produits', 'fa fa-tag', Product::class);
+       yield MenuItem::linkToCrud('Livraisons', 'fa fa-truck', Carrier::class);
         yield MenuItem::linkToCrud('Headers', 'fa fa-desktop', Header::class);
     }
 }

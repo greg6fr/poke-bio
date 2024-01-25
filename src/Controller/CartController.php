@@ -6,11 +6,13 @@ use App\Classe\Cart;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
     private $entityManager;
+    private $promo= "oui";
 
     public function __construct(EntityManagerInterface $entityManager)
     {
@@ -20,15 +22,36 @@ class CartController extends AbstractController
     /**
      * @Route("/mon-panier", name="cart")
      */
-    public function index(Cart $cart)
-    {
+    public function index(Cart $cart, Request $request)
+    {   //$verif=$request->query->get('promo');
+ //  dd(isset($verif));
+    $taux=0;
+        if(isset($this->promo) && $this->promo==="oui") {
+            
+            
+                $rand=rand(1,1000);
+    if($rand<=800) {
+        $taux = 0.10;
+    } else {
+        if($rand>800 && $rand<=900) {
+            $taux=0.05;
+        } else {
+            $taux=0.03;
+        }
+    }
+        }
+        
+    
         return $this->render('cart/index.html.twig', [
-            'cart' => $cart->getFull()
+            'cart' => $cart->getFull(),
+            'taux'=>$taux,
+            'code'=>strtolower(uniqid()),
         ]);
     }
 
     /**
      * @Route("/cart/add/{id}", name="add_to_cart")
+     *  
      */
     public function add(Cart $cart, $id)
     {

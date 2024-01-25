@@ -6,6 +6,7 @@ use App\Classe\Cart;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Form\OrderType;
+use App\Repository\PromoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
 {
+   
 
     private $entityManager;
 
@@ -44,7 +46,7 @@ class OrderController extends AbstractController
     /**
      * @Route("/commande/recapitulatif", name="order_recap", methods={"POST"})
      */
-    public function add(Cart $cart, Request $request)
+    public function add(Cart $cart, Request $request, PromoRepository $promoRepository)
     {
         $form = $this->createForm(OrderType::class, null, [
             'user' => $this->getUser()
@@ -80,7 +82,7 @@ class OrderController extends AbstractController
             $order->setState(0);
 
             $this->entityManager->persist($order);
-
+$allMount=0;
             // Enregistrer mes produits OrderDetails()
             foreach ($cart->getFull() as $product) {
                 $orderDetails = new OrderDetails();
@@ -88,17 +90,23 @@ class OrderController extends AbstractController
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
                 $orderDetails->setPrice($product['product']->getPrice());
-                $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
-                $this->entityManager->persist($orderDetails);
+                
+                $total= $product['product']->getPrice() * $product['quantity'];
+             
+                     $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
+                
+               $allMount =$allMount+($product['product']->getPrice() * $product['quantity']);
+               $this->entityManager->persist($orderDetails);
             }
-
+             
             $this->entityManager->flush();
 
             return $this->render('order/add.html.twig', [
                 'cart' => $cart->getFull(),
                 'carrier' => $carriers,
                 'delivery' => $delivery_content,
-                'reference' => $order->getReference()
+                'reference' => $order->getReference(),
+           
             ]);
         }
 

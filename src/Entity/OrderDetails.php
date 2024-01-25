@@ -43,6 +43,16 @@ class OrderDetails
      */
     private $total;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $tauxPromo;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $totalreduction;
+
     public function __toString()
     {
         return $this->getProduct().' x'.$this->getQuantity();
@@ -109,6 +119,30 @@ class OrderDetails
     public function setTotal(float $total): self
     {
         $this->total = $total;
+
+        return $this;
+    }
+
+    public function getTauxPromo(): ?float
+    {
+        return $this->tauxPromo;
+    }
+
+    public function setTauxPromo(?float $tauxPromo): self
+    {
+        $this->tauxPromo = $tauxPromo;
+
+        return $this;
+    }
+
+    public function getTotalreduction(): ?float
+    {
+        return $this->totalreduction;
+    }
+
+    public function setTotalreduction(?float $totalreduction): self
+    {
+        $this->totalreduction = $totalreduction;
 
         return $this;
     }
