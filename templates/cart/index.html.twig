@@ -15,7 +15,8 @@ cart|length > 0 %}
     </tr>
   </thead>
   <tbody>
-    {% set total = 0 %} {% for product in cart %}
+    {% set total = 0 %} {% set compteur = 0 %} {% set totalnet = 0 %}{% for
+    product in cart %} {% set compteur = compteur+1 %}
     <tr>
       <th>
         <img
@@ -56,8 +57,10 @@ cart|length > 0 %}
         </a>
       </td>
     </tr>
-    {% set total = total + (product.product.price * product.quantity) %} {%
-    endfor %}
+    {% if taux==5 and compteur ==2 %} {% set totalnet = totalnet +
+    ((product.product.price * product.quantity)-(product.product.price *
+    product.quantity)*0.50) %} {%endif%} {% set total = total +
+    (product.product.price * product.quantity) %} {% endfor %}
   </tbody>
 </table>
 <div class="text-right mb-5">
@@ -69,13 +72,13 @@ cart|length > 0 %}
   <b>Code promo appliqué : </b>{{ code }}<br />
   <b>Taux de réduction : </b>{{ taux }} <br />
   <b>Total net à payer: </b>
-  {% set result = ((total-(total*0.10))/100) | number_format(2, ',', '.') %} €
+  {% set result = ((total-(total*0.10)) / 100) | number_format(2, ',', '.') %} €
   {{ result }}
   {% set result =null %} {% endif %} {% if taux==5 and cart | length >=2 %}
   <b>Code promo appliqué : </b>{{ code }}<br />
   <b>Taux de réduction : </b>{{ taux }} <br />
   <b>Total net à payer: </b>
-  {% set result = ((total-(total*0.50))/100) | number_format(2, ',', '.') %} €
+  {% set result = ((total-totalnet)/100) | number_format(2, ',', '.') %} €
   {{ result }}
   {% set result =null %} {% endif %} {% if taux==3 and total==35 %}
   <b>Code promo appliqué : </b>{{ code }}<br />

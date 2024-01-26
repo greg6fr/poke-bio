@@ -10,6 +10,7 @@ use App\Repository\PromoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
@@ -18,7 +19,7 @@ class OrderController extends AbstractController
 
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $entityManager, private SessionInterface $session)
     {
         $this->entityManager = $entityManager;
     }
@@ -83,19 +84,44 @@ class OrderController extends AbstractController
 
             $this->entityManager->persist($order);
 $allMount=0;
+$objet = $this->session->get('promo');
+$cpt=0;
             // Enregistrer mes produits OrderDetails()
             foreach ($cart->getFull() as $product) {
+                $cpt++;
                 $orderDetails = new OrderDetails();
                 $orderDetails->setMyOrder($order);
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
                 $orderDetails->setPrice($product['product']->getPrice());
-                
-                $total= $product['product']->getPrice() * $product['quantity'];
-             
                      $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 
                $allMount =$allMount+($product['product']->getPrice() * $product['quantity']);
+                if($objet->getTaux()==10 && $allMount>=30) {
+                $calcPrix=$product['product']->getPrice() * $product['quantity'];
+                $mont=$calcPrix-$calcPrix*0.10;
+                 $orderDetails->setTotal($mont);
+                 $orderDetails->setTauxPromo($objet->getTaux());
+                 $orderDetails->setTotalreduction($calcPrix);
+                 
+             }
+             
+               if($objet->getTaux()==5 && $cpt==2) {
+                $calcPrix=$product['product']->getPrice() * $product['quantity'];
+                $mont=$calcPrix-$calcPrix*0.50;
+                 $orderDetails->setTotal($mont);
+                 $orderDetails->setTauxPromo($objet->getTaux());
+                 $orderDetails->setTotalreduction($calcPrix);
+                 
+             }
+              if($objet->getTaux()==3 && $allMount==35) {
+                $calcPrix=$product['product']->getPrice() * $product['quantity'];
+                $mont=0.00;
+                 $orderDetails->setTotal(35);
+                 $orderDetails->setTauxPromo(35);
+                 $orderDetails->setTotalreduction(0);
+                 
+             }
                $this->entityManager->persist($orderDetails);
             }
              
