@@ -207,6 +207,6 @@ class __TwigTemplate_ffd63658a9c591fdca32aa0a0efb6ee0 extends Template
     </div>
     <hr>
 {% endblock %}
-", "account/index.html.twig", "C:\\la-boutique-francaise\\templates\\account\\index.html.twig");
+", "account/index.html.twig", "C:\\poke-bio\\templates\\account\\index.html.twig");
     }
 }

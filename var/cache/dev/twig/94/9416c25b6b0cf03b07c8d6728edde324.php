@@ -139,6 +139,6 @@ class __TwigTemplate_30c5c233d5038074f9f76d1493baeebc extends Template
         <a href=\"{{ path('home') }}\" class=\"btn btn-info\">Revenir à l'accueil</a>
     </div>
 {% endblock %}
-", "@Twig/Exception/error.html.twig", "C:\\la-boutique-francaise\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
+", "@Twig/Exception/error.html.twig", "C:\\poke-bio\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
     }
 }

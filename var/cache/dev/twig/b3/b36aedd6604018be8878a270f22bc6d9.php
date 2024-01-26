@@ -113,6 +113,6 @@ class __TwigTemplate_d6e772bc26cb7cd8d56c0ea053f454d6 extends Template
 {% else %}
     {{ field.formattedValue }}
 {% endif %}
-", "@EasyAdmin/crud/field/array.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\array.html.twig");
+", "@EasyAdmin/crud/field/array.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\array.html.twig");
     }
 }

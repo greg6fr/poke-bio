@@ -54,7 +54,7 @@ class __TwigTemplate_b8df36a2d9dc74f8dcf9fb19140af983 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/crud/detail.html.twig"));
 
         // line 5
-        $context["__internal_3c472ddad99dee15366b3e46e6e673561620f1a7406dd6a4b5bd7530febcfd56"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 5, $this->source); })()), "i18n", [], "any", false, false, false, 5), "translationDomain", [], "any", false, false, false, 5);
+        $context["__internal_240da1bca4a5b91a71c4c364dcc344d3066fab6a0920f9d7b72b3e82dcf4a49f"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 5, $this->source); })()), "i18n", [], "any", false, false, false, 5), "translationDomain", [], "any", false, false, false, 5);
         // line 3
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -122,7 +122,7 @@ class __TwigTemplate_b8df36a2d9dc74f8dcf9fb19140af983 extends Template
         echo (((null === (isset($context["custom_page_title"]) || array_key_exists("custom_page_title", $context) ? $context["custom_page_title"] : (function () { throw new RuntimeError('Variable "custom_page_title" does not exist.', 13, $this->source); })()))) ? ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 14
 (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 14, $this->source); })()), "crud", [], "any", false, false, false, 14), "defaultPageTitle", [], "any", false, false, false, 14), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 14, $this->source); })()), "i18n", [], "any", false, false, false, 14), "translationParameters", [], "any", false, false, false, 14), "EasyAdminBundle")) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(        // line 15
 (isset($context["custom_page_title"]) || array_key_exists("custom_page_title", $context) ? $context["custom_page_title"] : (function () { throw new RuntimeError('Variable "custom_page_title" does not exist.', 15, $this->source); })()), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 15, $this->source); })()), "i18n", [], "any", false, false, false, 15), "translationParameters", [], "any", false, false, false, 15),         // line 5
-(isset($context["__internal_3c472ddad99dee15366b3e46e6e673561620f1a7406dd6a4b5bd7530febcfd56"]) || array_key_exists("__internal_3c472ddad99dee15366b3e46e6e673561620f1a7406dd6a4b5bd7530febcfd56", $context) ? $context["__internal_3c472ddad99dee15366b3e46e6e673561620f1a7406dd6a4b5bd7530febcfd56"] : (function () { throw new RuntimeError('Variable "__internal_3c472ddad99dee15366b3e46e6e673561620f1a7406dd6a4b5bd7530febcfd56" does not exist.', 5, $this->source); })()))));
+(isset($context["__internal_240da1bca4a5b91a71c4c364dcc344d3066fab6a0920f9d7b72b3e82dcf4a49f"]) || array_key_exists("__internal_240da1bca4a5b91a71c4c364dcc344d3066fab6a0920f9d7b72b3e82dcf4a49f", $context) ? $context["__internal_240da1bca4a5b91a71c4c364dcc344d3066fab6a0920f9d7b72b3e82dcf4a49f"] : (function () { throw new RuntimeError('Variable "__internal_240da1bca4a5b91a71c4c364dcc344d3066fab6a0920f9d7b72b3e82dcf4a49f" does not exist.', 5, $this->source); })()))));
         $___internal_parse_2_ = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
         // line 11
         echo twig_spaceless($___internal_parse_2_);
@@ -761,6 +761,6 @@ class __TwigTemplate_b8df36a2d9dc74f8dcf9fb19140af983 extends Template
         </dd>
     </div>
 {% endmacro %}
-", "@EasyAdmin/crud/detail.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\detail.html.twig");
+", "@EasyAdmin/crud/detail.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\detail.html.twig");
     }
 }

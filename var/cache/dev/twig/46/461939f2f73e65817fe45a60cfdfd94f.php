@@ -151,6 +151,6 @@ class __TwigTemplate_43bacfb86a940cea6bb8efc3664d4b93 extends Template
     {{ form(form) }}
 
 {% endblock %}
-", "register/index.html.twig", "C:\\la-boutique-francaise\\templates\\register\\index.html.twig");
+", "register/index.html.twig", "C:\\poke-bio\\templates\\register\\index.html.twig");
     }
 }

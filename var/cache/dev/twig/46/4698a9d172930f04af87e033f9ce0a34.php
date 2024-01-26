@@ -153,6 +153,6 @@ class __TwigTemplate_07c7cc16d4e2e925ac80d09c708d83d7 extends Template
     {% endif %}
     {{ form(form) }}
     <hr>
-{% endblock %}", "account/password.html.twig", "C:\\la-boutique-francaise\\templates\\account\\password.html.twig");
+{% endblock %}", "account/password.html.twig", "C:\\poke-bio\\templates\\account\\password.html.twig");
     }
 }

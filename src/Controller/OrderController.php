@@ -10,6 +10,7 @@ use App\Repository\PromoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,10 +19,13 @@ class OrderController extends AbstractController
    
 
     private $entityManager;
+    private $session;
 
-    public function __construct(EntityManagerInterface $entityManager, private SessionInterface $session)
+
+    public function __construct(EntityManagerInterface $entityManager, SessionInterface $session)
     {
         $this->entityManager = $entityManager;
+        $this->session=$session;
     }
 
     /**

@@ -100,6 +100,6 @@ class __TwigTemplate_7dc217ad83debc422000266f7e87ba7f extends Template
 {% if field.customOptions.get('showName') %}
     {{ field.formattedValue ?? '' }}
 {% endif %}
-", "@EasyAdmin/crud/field/language.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\language.html.twig");
+", "@EasyAdmin/crud/field/language.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\language.html.twig");
     }
 }

@@ -148,6 +148,6 @@ class __TwigTemplate_f5cd02391ffcb480bfbb5e9c913c459b extends Template
         </div>
     </div>
 {% endif %}
-", "@EasyAdmin/crud/field/text_editor.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\text_editor.html.twig");
+", "@EasyAdmin/crud/field/text_editor.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\field\\text_editor.html.twig");
     }
 }

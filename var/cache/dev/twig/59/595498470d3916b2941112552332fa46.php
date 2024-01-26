@@ -134,6 +134,6 @@ class __TwigTemplate_e90536125260f20cac3ddacefd149919 extends Template
         {% for attr, value in css_asset.htmlAttributes %}{{ attr }}=\"{{ value|e('html_attr') }}\" {% endfor %}>
     {% endif %}
 {% endfor %}
-", "@EasyAdmin/includes/_css_assets.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\includes\\_css_assets.html.twig");
+", "@EasyAdmin/includes/_css_assets.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\includes\\_css_assets.html.twig");
     }
 }

@@ -45,7 +45,7 @@
                     <a class="nav-link" href="{{ path('products') }}">Nos produits</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Qui sommes-nous ?</a>
+                    <a class="nav-link" href="{{path('app_quisommesnous')}}">Qui sommes-nous ?</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('contact') }}">Contact</a>
@@ -114,7 +114,7 @@
         <p>
             &copy; 2024 - Poke Bio<br/>
             <small>
-                <a href="#">Mentions Légales</a> &middot; <a href="#">CGU &middot; <a href="#">CGV</a></small>
+                <a href="{{path('app_mentions')}}">Mentions Légales</a> &middot; <a href="{{path('app_cgu')}}">CGU &middot; <a href="{{path('app_cgv')}}">CGV</a></small>
         </p>
     </footer>
 </main>

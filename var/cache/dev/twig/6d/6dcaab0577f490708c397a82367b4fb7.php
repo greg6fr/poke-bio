@@ -226,6 +226,6 @@ class __TwigTemplate_938521a4de9ea55bd322e33ed353899c extends Template
         </ul>
     </nav>
 </div>
-", "@EasyAdmin/crud/paginator.html.twig", "C:\\la-boutique-francaise\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\paginator.html.twig");
+", "@EasyAdmin/crud/paginator.html.twig", "C:\\poke-bio\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\crud\\paginator.html.twig");
     }
 }

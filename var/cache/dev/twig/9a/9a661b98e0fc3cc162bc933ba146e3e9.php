@@ -269,6 +269,6 @@ class __TwigTemplate_1192c2fb232fe57e915989b6a7cd958a extends Template
         <strong>Livraison :</strong> {{ (order.carrierprice / 100)|number_format(2, ',', '.') }} €<br/>
         <strong>Total : </strong> {{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, ',', '.') }} €
     </div>
-{% endblock %}", "account/order_show.html.twig", "C:\\la-boutique-francaise\\templates\\account\\order_show.html.twig");
+{% endblock %}", "account/order_show.html.twig", "C:\\poke-bio\\templates\\account\\order_show.html.twig");
     }
 }

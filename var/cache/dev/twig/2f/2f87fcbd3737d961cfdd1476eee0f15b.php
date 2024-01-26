@@ -154,6 +154,6 @@ class __TwigTemplate_ea60c300c7ce443b4e3ee828e219f3f6 extends Template
     </p>
     <a href=\"{{ path('order') }}\" class=\"btn btn-success\">Réessayer le paiement</a>
 {% endblock %}
-", "order_cancel/index.html.twig", "C:\\la-boutique-francaise\\templates\\order_cancel\\index.html.twig");
+", "order_cancel/index.html.twig", "C:\\poke-bio\\templates\\order_cancel\\index.html.twig");
     }
 }

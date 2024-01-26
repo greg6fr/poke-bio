@@ -247,6 +247,6 @@ endblock %} {% block content %}
 <!-- /.row -->
 
 {% endblock %}
-", "product/show.html.twig", "C:\\la-boutique-francaise\\templates\\product\\show.html.twig");
+", "product/show.html.twig", "C:\\poke-bio\\templates\\product\\show.html.twig");
     }
 }

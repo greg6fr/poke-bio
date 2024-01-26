@@ -273,6 +273,6 @@ content %}
 
 <!-- /END THE FEATURETTES -->
 {% endblock %}
-", "home/index.html.twig", "C:\\la-boutique-francaise\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\poke-bio\\templates\\home\\index.html.twig");
     }
 }

@@ -80,6 +80,6 @@ class __TwigTemplate_d5ddb304a34a9d2cdc80ad44a8327192 extends Template
     public function getSourceContext()
     {
         return new Source("{% extends '@EasyAdmin/page/content.html.twig' %}
-", "admin/dashboard.html.twig", "C:\\la-boutique-francaise\\templates\\admin\\dashboard.html.twig");
+", "admin/dashboard.html.twig", "C:\\poke-bio\\templates\\admin\\dashboard.html.twig");
     }
 }

@@ -452,6 +452,6 @@ cart|length > 0 %}
 <hr />
 <p><b>Votre panier est vide.</b></p>
 {% endif %} {% endblock %}
-", "cart/index.html.twig", "C:\\la-boutique-francaise\\templates\\cart\\index.html.twig");
+", "cart/index.html.twig", "C:\\poke-bio\\templates\\cart\\index.html.twig");
     }
 }

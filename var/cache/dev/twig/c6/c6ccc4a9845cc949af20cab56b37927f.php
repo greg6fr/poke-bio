@@ -176,6 +176,6 @@ made in France{% endblock %} {% block content %}
 </div>
 
 {% endblock %}
-", "contact/index.html.twig", "C:\\la-boutique-francaise\\templates\\contact\\index.html.twig");
+", "contact/index.html.twig", "C:\\poke-bio\\templates\\contact\\index.html.twig");
     }
 }

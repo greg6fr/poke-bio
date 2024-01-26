@@ -196,6 +196,6 @@ class __TwigTemplate_9f502e149c9beadedf3153e661248796 extends Template
             </div>
         </div>
     </div>
-{% endblock %}", "product/index.html.twig", "C:\\la-boutique-francaise\\templates\\product\\index.html.twig");
+{% endblock %}", "product/index.html.twig", "C:\\poke-bio\\templates\\product\\index.html.twig");
     }
 }

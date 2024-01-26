@@ -101,6 +101,6 @@ class __TwigTemplate_c357e4cff6e78b3d087bc84142182224 extends Template
     <h5>{{ product.name }}</h5>
     <span class=\"product-subtitle\">{{ product.subtitle }}</span>
     <span class=\"product-price\">{{ (product.price / 100)|number_format(2, ',', '.') }} €</span>
-</div>", "product/single_product.html.twig", "C:\\la-boutique-francaise\\templates\\product\\single_product.html.twig");
+</div>", "product/single_product.html.twig", "C:\\poke-bio\\templates\\product\\single_product.html.twig");
     }
 }

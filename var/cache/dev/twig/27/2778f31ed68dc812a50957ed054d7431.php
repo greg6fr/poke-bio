@@ -251,39 +251,38 @@ Française";
 
         // line 68
         echo "<script type=\"text/javascript\">
-  var stripe = Stripe(\"pk_test_51ObzRNIHR8VSmFCaNsGu1sKjd0KxVUqewszy0q8IMxSYIYGNlt0iGZyynOZVwBVyPljzBH2MawtV8l5LcBkXmgbq00u6Q3JkzZ\");
+  var stripe = Stripe(
+    \"pk_test_51ObzRNIHR8VSmFCaNsGu1sKjd0KxVUqewszy0q8IMxSYIYGNlt0iGZyynOZVwBVyPljzBH2MawtV8l5LcBkXmgbq00u6Q3JkzZ\"
+  );
   var checkoutButton = document.getElementById(\"checkout-button\");
   checkoutButton.addEventListener(\"click\", function () {
-          fetch(\"/commande/create-session/";
-        // line 72
-        echo twig_escape_filter($this->env, (isset($context["reference"]) || array_key_exists("reference", $context) ? $context["reference"] : (function () { throw new RuntimeError('Variable "reference" does not exist.', 72, $this->source); })()), "html", null, true);
-        echo "\", {
-              method: \"POST\",
-          })
-          .then(function (response) {
-              return response.json();
-          })
-          .then(function (session) {
-              if (session.error == 'order') {
-                  window.location.replace('";
-        // line 80
+    fetch(\"/commande/create-session\", {
+      method: \"POST\",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (session) {
+        if (session.error == \"order\") {
+          //  window.location.replace('";
+        // line 82
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order");
         echo "');
-              } else {
-                  return stripe.redirectToCheckout({ sessionId: session.id });
-              }
-          })
-          .then(function (result) {
-              // If redirectToCheckout fails due to a browser or network
-              // error, you should display the localized error message to your
-              // customer using error.message.
-              if (result.error) {
-                  alert(result.error.message);
-              }
-          })
-          .catch(function (error) {
-              console.error(\"Error:\", error);
-          });
+        } else {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        }
+      })
+      .then(function (result) {
+        // If redirectToCheckout fails due to a browser or network
+        // error, you should display the localized error message to your
+        // customer using error.message.
+        if (result.error) {
+          alert(result.error.message);
+        }
+      })
+      .catch(function (error) {
+        console.error(\"Error:\", error);
+      });
   });
 </script>
 ";
@@ -316,7 +315,7 @@ Française";
      */
     public function getDebugInfo()
     {
-        return array (  270 => 80,  259 => 72,  253 => 68,  243 => 67,  227 => 62,  220 => 58,  214 => 55,  208 => 52,  202 => 48,  195 => 46,  188 => 42,  181 => 38,  176 => 36,  171 => 34,  164 => 30,  160 => 29,  151 => 26,  145 => 25,  136 => 19,  132 => 18,  128 => 17,  120 => 12,  111 => 5,  101 => 4,  81 => 3,  70 => 2,  38 => 1,);
+        return array (  269 => 82,  253 => 68,  243 => 67,  227 => 62,  220 => 58,  214 => 55,  208 => 52,  202 => 48,  195 => 46,  188 => 42,  181 => 38,  176 => 36,  171 => 34,  164 => 30,  160 => 29,  151 => 26,  145 => 25,  136 => 19,  132 => 18,  128 => 17,  120 => 12,  111 => 5,  101 => 4,  81 => 3,  70 => 2,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -389,36 +388,38 @@ Française{% endblock %} {% block content %}
 </div>
 {% endblock %} {% block script %}
 <script type=\"text/javascript\">
-  var stripe = Stripe(\"pk_test_51ObzRNIHR8VSmFCaNsGu1sKjd0KxVUqewszy0q8IMxSYIYGNlt0iGZyynOZVwBVyPljzBH2MawtV8l5LcBkXmgbq00u6Q3JkzZ\");
+  var stripe = Stripe(
+    \"pk_test_51ObzRNIHR8VSmFCaNsGu1sKjd0KxVUqewszy0q8IMxSYIYGNlt0iGZyynOZVwBVyPljzBH2MawtV8l5LcBkXmgbq00u6Q3JkzZ\"
+  );
   var checkoutButton = document.getElementById(\"checkout-button\");
   checkoutButton.addEventListener(\"click\", function () {
-          fetch(\"/commande/create-session/{{ reference }}\", {
-              method: \"POST\",
-          })
-          .then(function (response) {
-              return response.json();
-          })
-          .then(function (session) {
-              if (session.error == 'order') {
-                  window.location.replace('{{ path('order') }}');
-              } else {
-                  return stripe.redirectToCheckout({ sessionId: session.id });
-              }
-          })
-          .then(function (result) {
-              // If redirectToCheckout fails due to a browser or network
-              // error, you should display the localized error message to your
-              // customer using error.message.
-              if (result.error) {
-                  alert(result.error.message);
-              }
-          })
-          .catch(function (error) {
-              console.error(\"Error:\", error);
-          });
+    fetch(\"/commande/create-session\", {
+      method: \"POST\",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (session) {
+        if (session.error == \"order\") {
+          //  window.location.replace('{{ path('order') }}');
+        } else {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        }
+      })
+      .then(function (result) {
+        // If redirectToCheckout fails due to a browser or network
+        // error, you should display the localized error message to your
+        // customer using error.message.
+        if (result.error) {
+          alert(result.error.message);
+        }
+      })
+      .catch(function (error) {
+        console.error(\"Error:\", error);
+      });
   });
 </script>
 {% endblock %}
-", "order/add.html.twig", "C:\\la-boutique-francaise\\templates\\order\\add.html.twig");
+", "order/add.html.twig", "C:\\poke-bio\\templates\\order\\add.html.twig");
     }
 }

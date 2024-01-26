@@ -168,6 +168,6 @@ class __TwigTemplate_e9325d5c4750f30e3aada18daa323031 extends Template
     Pour suivre votre commande, rendez-vous dans votre <a href=\"{{ path('account_order') }}\">compte</a>.
     </p>
 {% endblock %}
-", "order_success/index.html.twig", "C:\\la-boutique-francaise\\templates\\order_success\\index.html.twig");
+", "order_success/index.html.twig", "C:\\poke-bio\\templates\\order_success\\index.html.twig");
     }
 }
