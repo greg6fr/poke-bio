@@ -133,10 +133,12 @@ class __TwigTemplate_5b2a81fc00341ffee37fe97874cf1292 extends Template
     ";
         }
         // line 28
-        echo "
-    <button class=\"btn btn-lg btn-info btn-block mt-3\" type=\"submit\">
-      Bénéficiez de votre gain
-    </button>
+        echo "    <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("products");
+        echo "\" class=\"btn btn-lg btn-info btn-block mt-3\"
+      >Bénéficiez de votre gain</a
+    >
+
     <hr />
   </form>
 </div>
@@ -203,10 +205,10 @@ class __TwigTemplate_5b2a81fc00341ffee37fe97874cf1292 extends Template
       <strong>Un menu de 35 euros gratuit.</strong>
     </h2>
     {% endif %}
+    <a href=\"{{ path('products') }}\" class=\"btn btn-lg btn-info btn-block mt-3\"
+      >Bénéficiez de votre gain</a
+    >
 
-    <button class=\"btn btn-lg btn-info btn-block mt-3\" type=\"submit\">
-      Bénéficiez de votre gain
-    </button>
     <hr />
   </form>
 </div>

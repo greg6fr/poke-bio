@@ -214,33 +214,82 @@ Retrouvez l'ensemble des produits que vous avez ajouté à votre panier. ";
             echo " €<br />
   ";
             // line 68
-            if (((isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 68, $this->source); })()) && ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 68, $this->source); })()) >= 30))) {
+            if ((((isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 68, $this->source); })()) == 10) && ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 68, $this->source); })()) >= 30))) {
                 // line 69
                 echo "  <b>Code promo appliqué : </b>";
                 echo twig_escape_filter($this->env, (isset($context["code"]) || array_key_exists("code", $context) ? $context["code"] : (function () { throw new RuntimeError('Variable "code" does not exist.', 69, $this->source); })()), "html", null, true);
                 echo "<br />
-  <b>Taux de réduction: </b>";
+  <b>Taux de réduction : </b>";
                 // line 70
-                echo twig_escape_filter($this->env, ((isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 70, $this->source); })()) * 100), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 70, $this->source); })()), "html", null, true);
                 echo " <br />
-  ";
-            }
-            // line 71
-            echo "<br />
   <b>Total net à payer: </b>
   ";
-            // line 73
-            $context["result"] = twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 73, $this->source); })()) / 100) * (1 - (isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 73, $this->source); })()))), 2, ",", ".");
-            echo " €
+                // line 72
+                $context["result"] = twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 72, $this->source); })()) - ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 72, $this->source); })()) * 0.1)) / 100), 2, ",", ".");
+                echo " €
   ";
-            // line 74
-            echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 74, $this->source); })()), "html", null, true);
-            echo "
+                // line 73
+                echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 73, $this->source); })()), "html", null, true);
+                echo "
   ";
-            // line 75
-            $context["result"] = null;
-            // line 76
-            echo "  <a href=\"";
+                // line 74
+                $context["result"] = null;
+                echo " ";
+            }
+            echo " ";
+            if ((((isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 74, $this->source); })()) == 5) && (twig_length_filter($this->env, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 74, $this->source); })())) >= 2))) {
+                // line 75
+                echo "  <b>Code promo appliqué : </b>";
+                echo twig_escape_filter($this->env, (isset($context["code"]) || array_key_exists("code", $context) ? $context["code"] : (function () { throw new RuntimeError('Variable "code" does not exist.', 75, $this->source); })()), "html", null, true);
+                echo "<br />
+  <b>Taux de réduction : </b>";
+                // line 76
+                echo twig_escape_filter($this->env, (isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 76, $this->source); })()), "html", null, true);
+                echo " <br />
+  <b>Total net à payer: </b>
+  ";
+                // line 78
+                $context["result"] = twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 78, $this->source); })()) - ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 78, $this->source); })()) * 0.5)) / 100), 2, ",", ".");
+                echo " €
+  ";
+                // line 79
+                echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 79, $this->source); })()), "html", null, true);
+                echo "
+  ";
+                // line 80
+                $context["result"] = null;
+                echo " ";
+            }
+            echo " ";
+            if ((((isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 80, $this->source); })()) == 3) && ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 80, $this->source); })()) == 35))) {
+                // line 81
+                echo "  <b>Code promo appliqué : </b>";
+                echo twig_escape_filter($this->env, (isset($context["code"]) || array_key_exists("code", $context) ? $context["code"] : (function () { throw new RuntimeError('Variable "code" does not exist.', 81, $this->source); })()), "html", null, true);
+                echo "<br />
+  <b>Taux de réduction : </b>";
+                // line 82
+                echo twig_escape_filter($this->env, (isset($context["taux"]) || array_key_exists("taux", $context) ? $context["taux"] : (function () { throw new RuntimeError('Variable "taux" does not exist.', 82, $this->source); })()), "html", null, true);
+                echo " <br />
+  <b>Total net à payer: </b>
+  ";
+                // line 84
+                $context["result"] = twig_number_format_filter($this->env, (0 / 100), 2, ",", ".");
+                echo " €
+  ";
+                // line 85
+                echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 85, $this->source); })()), "html", null, true);
+                echo "
+  ";
+                // line 86
+                $context["result"] = null;
+                echo " ";
+            }
+            // line 87
+            echo "  <br />
+
+  <a href=\"";
+            // line 89
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order");
             echo "\" class=\"btn btn-success btn-block mt-3\"
     >Valider mon panier</a
@@ -248,12 +297,12 @@ Retrouvez l'ensemble des produits que vous avez ajouté à votre panier. ";
 </div>
 ";
         } else {
-            // line 81
+            // line 94
             echo "<hr />
 <p><b>Votre panier est vide.</b></p>
 ";
         }
-        // line 83
+        // line 96
         echo " ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -284,7 +333,7 @@ Retrouvez l'ensemble des produits que vous avez ajouté à votre panier. ";
      */
     public function getDebugInfo()
     {
-        return array (  257 => 83,  252 => 81,  243 => 76,  241 => 75,  237 => 74,  233 => 73,  229 => 71,  224 => 70,  219 => 69,  217 => 68,  213 => 67,  207 => 64,  202 => 61,  195 => 59,  186 => 53,  181 => 51,  174 => 47,  169 => 45,  161 => 40,  156 => 38,  152 => 37,  145 => 33,  140 => 31,  134 => 28,  130 => 27,  123 => 23,  119 => 22,  114 => 19,  108 => 18,  94 => 6,  92 => 5,  91 => 4,  88 => 3,  78 => 2,  36 => 1,);
+        return array (  306 => 96,  301 => 94,  293 => 89,  289 => 87,  285 => 86,  281 => 85,  277 => 84,  272 => 82,  267 => 81,  261 => 80,  257 => 79,  253 => 78,  248 => 76,  243 => 75,  237 => 74,  233 => 73,  229 => 72,  224 => 70,  219 => 69,  217 => 68,  213 => 67,  207 => 64,  202 => 61,  195 => 59,  186 => 53,  181 => 51,  174 => 47,  169 => 45,  161 => 40,  156 => 38,  152 => 37,  145 => 33,  140 => 31,  134 => 28,  130 => 27,  123 => 23,  119 => 22,  114 => 19,  108 => 18,  94 => 6,  92 => 5,  91 => 4,  88 => 3,  78 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -356,14 +405,27 @@ cart|length > 0 %}
   <br />
   <b>Total de mon panier :</b>
   {{ (total / 100)|number_format(2, ',', '.') }} €<br />
-  {% if taux and total>=30 %}
+  {% if taux==10 and total>=30 %}
   <b>Code promo appliqué : </b>{{ code }}<br />
-  <b>Taux de réduction: </b>{{ taux * 100 }} <br />
-  {% endif %}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
   <b>Total net à payer: </b>
-  {% set result = (total/100*(1-taux)) | number_format(2, ',', '.') %} €
+  {% set result = ((total-(total*0.10))/100) | number_format(2, ',', '.') %} €
   {{ result }}
-  {% set result =null %}
+  {% set result =null %} {% endif %} {% if taux==5 and cart | length >=2 %}
+  <b>Code promo appliqué : </b>{{ code }}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
+  <b>Total net à payer: </b>
+  {% set result = ((total-(total*0.50))/100) | number_format(2, ',', '.') %} €
+  {{ result }}
+  {% set result =null %} {% endif %} {% if taux==3 and total==35 %}
+  <b>Code promo appliqué : </b>{{ code }}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
+  <b>Total net à payer: </b>
+  {% set result = (0/100) | number_format(2, ',', '.') %} €
+  {{ result }}
+  {% set result =null %} {% endif %}
+  <br />
+
   <a href=\"{{ path('order') }}\" class=\"btn btn-success btn-block mt-3\"
     >Valider mon panier</a
   >

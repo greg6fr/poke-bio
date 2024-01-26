@@ -7,14 +7,15 @@ use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
     private $entityManager;
-    private $promo= "oui";
+   
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $entityManager, private SessionInterface $session)
     {
         $this->entityManager = $entityManager;
     }
@@ -24,27 +25,14 @@ class CartController extends AbstractController
      */
     public function index(Cart $cart, Request $request)
     {   
-    $taux=0;
-        if(isset($this->promo) && $this->promo==="oui") {
-            
-            
-                $rand=rand(1,1000);
-    if($rand<=800) {
-        $taux = 0.10;
-    } else {
-        if($rand>800 && $rand<=900) {
-            $taux=0.05;
-        } else {
-            $taux=0.03;
-        }
-    }
-        }
+   
+        $promo = $this->session->get('promo');
         
     
         return $this->render('cart/index.html.twig', [
             'cart' => $cart->getFull(),
-            'taux'=>$taux,
-            'code'=>strtolower(uniqid()),
+            'taux'=>$promo->getTaux(),
+            'code'=>$promo->getCode(),
         ]);
     }
 

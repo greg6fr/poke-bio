@@ -65,14 +65,27 @@ cart|length > 0 %}
   <br />
   <b>Total de mon panier :</b>
   {{ (total / 100)|number_format(2, ',', '.') }} €<br />
-  {% if taux and total>=30 %}
+  {% if taux==10 and total>=30 %}
   <b>Code promo appliqué : </b>{{ code }}<br />
-  <b>Taux de réduction: </b>{{ taux * 100 }} <br />
-  {% endif %}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
   <b>Total net à payer: </b>
-  {% set result = (total/100*(1-taux)) | number_format(2, ',', '.') %} €
+  {% set result = ((total-(total*0.10))/100) | number_format(2, ',', '.') %} €
   {{ result }}
-  {% set result =null %}
+  {% set result =null %} {% endif %} {% if taux==5 and cart | length >=2 %}
+  <b>Code promo appliqué : </b>{{ code }}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
+  <b>Total net à payer: </b>
+  {% set result = ((total-(total*0.50))/100) | number_format(2, ',', '.') %} €
+  {{ result }}
+  {% set result =null %} {% endif %} {% if taux==3 and total==35 %}
+  <b>Code promo appliqué : </b>{{ code }}<br />
+  <b>Taux de réduction : </b>{{ taux }} <br />
+  <b>Total net à payer: </b>
+  {% set result = (0/100) | number_format(2, ',', '.') %} €
+  {{ result }}
+  {% set result =null %} {% endif %}
+  <br />
+
   <a href="{{ path('order') }}" class="btn btn-success btn-block mt-3"
     >Valider mon panier</a
   >
